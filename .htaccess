@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.*) /index.php?$1 [QSA,L]
+RewriteRule ^resource/(.*)$ resource/$1 [L]
+RewriteRule ^catalog/(.*)$ catalog/$1 [L]
+AddDefaultCharset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
+
+php_value output_buffering 4096
+php_value opcache.revalidate_freq 0
+php_value max_execution_time 2400
+php_value session.gc_maxlifetime 2400
+php_flag display_errors off
+php_flag log_errors off
