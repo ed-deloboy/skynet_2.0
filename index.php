@@ -17,57 +17,25 @@ include 'views//header/head.php';
     <?php
     // тело
 
-    if ($_SERVER['REQUEST_URI'] == '/') {
-      $Page = 'index';
-      $Module = 'index';
-    } else {
-      $URL_Path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-      $URL_Parts = explode('/', trim($URL_Path, ' /'));
-      $Page = array_shift($URL_Parts);
-      $Module = array_shift($URL_Parts);
-      if (!empty($Module)) {
-        $Param = array();
-        for ($i = 0; $i < count($URL_Parts); $i++) {
-          $Param[$URL_Parts[$i]] = $URL_Parts[++$i];
-        }
-      }
-    }
-    // echo 'cсылка = ' . $Page;
-    if ($Page == 'index') {
-      include 'views/general/index.php';
-    } elseif ($Page == 'phone') {
-      include 'views/phone/index.php';
-    } elseif ($Page == 'tablet') {
-      include 'views/tablet/index.php';
-    } elseif ($Page == 'laptop') {
-      include 'views/laptop/index.php';
-    } elseif ($Page == 'printer') {
-      include 'views/printer/index.php';
-    } elseif ($Page == 'tv') {
-      include 'views/tv/index.php';
-    } elseif ($Page == 'photo') {
-      include 'views/photo/index.php';
-    } elseif ($Page == 'thanks') {
-      include 'views/thanks/index.php';
-    } elseif ($Page == 'politics') {
-      include 'views/politics/index.php';
-    } elseif ($Page == 'laser') {
-      include 'views/laser/index.php';
-    } elseif ($Page == 'gidrogel') {
-      include 'views/gidrogel/index.php';
-    } elseif ($Page == 'contc') {
-      include 'views/contacts/index.php';
-    } elseif ($Page == 'orders') {
-      include 'views/orders/index.php';
-    } else {
-      include 'views/404/index.php';
-    }
-    
+    // if ($_SERVER['REQUEST_URI'] == '/') {
+    //   $Page = 'index';
+    //   $Module = 'index';
+    // } else {
+    //   $URL_Path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    //   $URL_Parts = explode('/', trim($URL_Path, ' /'));
+    //   $Page = array_shift($URL_Parts);
+    //   $Module = array_shift($URL_Parts);
+    //   if (!empty($Module)) {
+    //     $Param = array();
+    //     for ($i = 0; $i < count($URL_Parts); $i++) {
+    //       $Param[$URL_Parts[$i]] = $URL_Parts[++$i];
+    //     }
+    //   }
+    // }
 
-    ?>
-
-    <?php
+    include $contentBody;
     include 'views/footer/index.php';
+    
     ?>
 
     <!-- alerts -->
