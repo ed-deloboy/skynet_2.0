@@ -22,10 +22,13 @@
               </li>
             </ul>
           </nav>
-          <button class="burger-toggle-btn" id="mobToggleBtn"><span class="burger-toggle-icon burger-mobile"></span></button>
-          <div class="header__middle-callback-block">
-            <!-- <a href="tel:+78007776897" class="header__middle-number-phone">8 (800) 777-68-97</a> -->
-            <button id="btnCallBackId" class="btn btn--blue popup-left-trigger">Заказать звонок</button>
+          <!-- <div class="header__middle-callback-block"> -->
+            <div class="d-flex flex-row">
+              <!-- <a href="tel:+78007776897" class="header__middle-number-phone">8 (800) 777-68-97</a> -->
+              <button id="btnCallBackId" class="mx-1 btn btn--blue popup-left-trigger"><i class="fas fa-phone-alt"></i></button>
+              <!-- <a href="/office" class="mx-1 btn btn--blue"><i class="fas fa-user-circle"></i></a> -->
+              <button class="burger-toggle-btn mx-1" id="mobToggleBtn"><span class="burger-toggle-icon burger-mobile"></span></button>
+            <!-- <button id="" class="mx-1 btn btn--blue popup-left-trigger"><i class="fas fa-cart-plus"></i></button> -->
             <!-- <a class="order-status" href="/orders">Статус ремонта</a> -->
           </div>
         </div>

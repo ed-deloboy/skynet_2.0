@@ -14,6 +14,9 @@
             <li class="header__top-nav-item">
               <a class="badge bg-primary bg-opacity-25 text-primary" href="/orders">Статус ремонта</a>
             </li>
+            <li class="header__top-nav-item">
+              <a class="badge bg-primary bg-opacity-25 text-primary" href="/for-business">Для бизнеса</a>
+            </li>
           </ul>
 
           <div class="header__top-right-content">
@@ -37,9 +40,17 @@
               </div>
 
             </div>
-            <span class="header__top-mail-title">Email:</span>
-            <a class="header__top-mail-text" href="mailto:client@skynet-service.com">client@skynet-service.com</a>
-            <a class="ms-3 text-dark fw-bolder" href="tel:88007776897">8 (800) 777-68-97</a>
+            <ul class="d-flex">
+              <li class="me-2">
+                <a class="ms-3 text-dark fw-bolder" href="tel:88007776897">8 (800) 777-68-97</a>
+              </li>
+              <!-- <li class="me-2">
+                <a class="badge bg-primary bg-opacity-25 text-primary" href="/office">Аккаунт</a>
+              </li> -->
+              <!-- <li class="me-2">
+                <a type="button" data-bs-toggle="modal" data-bs-target="#authModal" class="badge bg-primary bg-opacity-25 text-primary">Вход</a>
+              </li> -->
+            </ul>
           </div>
         </div>
 

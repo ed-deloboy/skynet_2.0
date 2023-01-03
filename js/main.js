@@ -29,7 +29,7 @@ function alertForm(elem, index) {
       url: $(this).attr("action"),
       data: str,
       success: function success(response) {
-        console.log(response);
+        // console.log(response);
         if (response == 1) {
           $(elem).children("#alert_for_form").html("<div class=\"alert-mass bg-danger\">\n          <p class=\"alert-mass--text\" id=\"textAletMass\">\n            \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u043F\u043E\u043B\u0435 \u0432\u0432\u043E\u0434\u0430 \u043D\u043E\u043C\u0435\u0440\u0430, \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0432\u044B \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u043B\u0438 \u043E\u0434\u043D\u0443 \u0438\u043B\u0438 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0446\u0438\u0444\u0440\n          </p>\n        </div>");
         } else if (response == 2) {

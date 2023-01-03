@@ -286,76 +286,9 @@ include 'views/header/header.php';
 </section>
 
 <!-- acc-map -->
-<section class="acc-map" id="acc-map">
-  <div class="container">
-    <h2 class="title-h2">Сервисные центры на карте</h2>
-    <span class="lineOne"></span>
-
-    <div class="acc-map__wrapper">
-      <div class="acc-map__acc-container">
-        <ul id="accFrance" class="acc__wrapper">
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Ростов-на-Дону</span>
-            </button>
-            <p class="acc-item__text">
-              Буденновский проспект, 22, цокольный этаж
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-СБ с 10:00 до 20:00 </span>
-              <span class="acc-item__text-desc"> ВС с 10:00 до 18:00 </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 103)
-              </span>
-            </p>
-          </li>
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Красный Сулин</span>
-            </button>
-            <p class="acc-item__text">
-              Ул. Фурманова, 2А, вход в центральный рынок
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-ВС с 9:00 до 18:00 </span>
-              <span class="acc-item__text-desc">
-                Без перерывов и выходных
-              </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 102)
-              </span>
-            </p>
-          </li>
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Шахты</span>
-            </button>
-            <p class="acc-item__text">
-              ул. Шевченко 123 (123В), павильон 1, (Напротив входа в "Дом быта")
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-ВС с 9:00 до 18:00 </span>
-              <span class="acc-item__text-desc">
-                Без перерывов и выходных
-              </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 101)
-              </span>
-            </p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="acc-map__map-container">
-        <div class="map-width" id="map"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<?php 
+include 'view_modules/acc_map/index.php';
+?>
 
 <!-- alerts -->
 

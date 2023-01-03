@@ -286,76 +286,9 @@ include 'views/header/header.php';
   </div>
 </section>
 
-<!-- acc-map -->
-<section class="acc-map" id="acc-map">
-  <div class="container">
-    <h2 class="title-h2">Сервисные центры на карте</h2>
-    <span class="lineOne"></span>
-
-    <div class="acc-map__wrapper">
-      <div class="acc-map__acc-container">
-        <ul id="accFrance" class="acc__wrapper">
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Ростов-на-Дону</span>
-            </button>
-            <p class="acc-item__text">
-              Буденновский проспект, 22, цокольный этаж
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-СБ с 10:00 до 20:00 </span>
-              <span class="acc-item__text-desc"> ВС с 10:00 до 18:00 </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 103)
-              </span>
-            </p>
-          </li>
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Красный Сулин</span>
-            </button>
-            <p class="acc-item__text">
-              Ул. Фурманова, 2А, вход в центральный рынок
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-ВС с 9:00 до 18:00 </span>
-              <span class="acc-item__text-desc">
-                Без перерывов и выходных
-              </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 102)
-              </span>
-            </p>
-          </li>
-          <li class="acc-item">
-            <button class="acc-item__button">
-              <span class="acc-item__title">Скайнет Шахты</span>
-            </button>
-            <p class="acc-item__text">
-              ул. Шевченко 123 (123В), павильон 1, (Напротив входа в "Дом быта")
-              <span class="mt20 acc-item__text-desc"> Режим работы: </span>
-              <span class="acc-item__text-desc"> ПН-ВС с 9:00 до 18:00 </span>
-              <span class="acc-item__text-desc">
-                Без перерывов и выходных
-              </span>
-              <span class="mt20 acc-item__text-desc"> Номер телефона: </span>
-              <span class="acc-item__text-desc">
-                <a class="blue-link" href="tel:88007776897">8 (800) 777-68-97</a>
-                (доб. 101)
-              </span>
-            </p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="acc-map__map-container">
-        <div class="map-width" id="map"></div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+include 'view_modules/acc_map/index.php';
+?>
 
 <!-- alerts -->
 
@@ -399,6 +332,7 @@ include 'views/header/header.php';
     <select name="selectModel" id="selectModel">
       <option value="">Модель телефона</option>
       <optgroup label="Apple">
+        <option value="iPhone 14/14 Max/14 Pro/14 Pro Max/14 mini"></option>
         <option value="iPhone 13/13 Pro/13 Pro Max/13 mini"></option>
         <option value="iPhone 12/12 Pro/12 Pro Max/12 mini"></option>
         <option value="iPhone 11/11 Pro/11 Pro Max"></option>
@@ -436,6 +370,11 @@ include 'views/header/header.php';
         <option value="Honor 8/8A/8S/8X/8X Lite"></option>
         <option value="Другая модель Honor/Huawei"></option>
       </optgroup>
+      <optgroup label="Не известные">
+        <option value="Планшет (не известное название)"></option>
+        <option value="Смартфон (не известное название)"></option>
+      </optgroup>
+
     </select>
 
     <div class="question-form__client-id-container">

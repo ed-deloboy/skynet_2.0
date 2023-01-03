@@ -2,3 +2,269 @@ $data:
 $data: 
 $data: 
 $data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: Array
+(
+    [update_id] => 769104148
+    [message] => Array
+        (
+            [message_id] => 718
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672413884
+            [text] => 🔀 Заявки по городам
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104149
+    [message] => Array
+        (
+            [message_id] => 720
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672413886
+            [text] => 1️⃣ Заявки Ростов
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104150
+    [message] => Array
+        (
+            [message_id] => 726
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672413899
+            [text] => 2️⃣ Заявки Шахты
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104151
+    [message] => Array
+        (
+            [message_id] => 730
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672413905
+            [text] => 3️⃣ Заявки Сулин
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104152
+    [message] => Array
+        (
+            [message_id] => 734
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672413917
+            [text] => ↩️ Главная
+        )
+
+)
+
+$data: 
+$data: Array
+(
+    [update_id] => 769104153
+    [message] => Array
+        (
+            [message_id] => 737
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672428728
+            [text] => 🔀 Заявки по городам
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104154
+    [message] => Array
+        (
+            [message_id] => 739
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672428732
+            [text] => 3️⃣ Заявки Сулин
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104155
+    [message] => Array
+        (
+            [message_id] => 744
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672428756
+            [text] => ↩️ Главная
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 769104156
+    [message] => Array
+        (
+            [message_id] => 746
+            [from] => Array
+                (
+                    [id] => 771413338
+                    [is_bot] => 
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 771413338
+                    [first_name] => Ed
+                    [username] => ed_programmer
+                    [type] => private
+                )
+
+            [date] => 1672428780
+            [text] => 📛 Не просмотренные заявки
+        )
+
+)
+
