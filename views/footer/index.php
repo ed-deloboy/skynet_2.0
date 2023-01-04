@@ -277,17 +277,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="authForm">
+        <form id="authForm" class="mb-3">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label p-0 fs-6">Номер телефона</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="authPhoneModal" class="form-label p-0 fs-6">Номер телефона</label>
+            <input type="tel" class="form-control inp_check1" name="phone" placeholder="+7 (___) ___-____" id="authPhoneModal">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label p-0 fs-6">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="authPassModal" class="form-label p-0 fs-6">Пароль</label>
+            <input type="password" name="pass" class="form-control inp_check2" id="authPassModal">
           </div>
-          <button form="authForm" type="submit" class="btn btn-success" data-bs-dismiss="modal">Войти</button>
+          <button type="submit" class="btn btn-primary">Войти</button>
         </form>
+        <div data-err-auth class="d-none border border-danger p-3 rounded">
+        </div>
         <p class="py-3">
           Нет аккаунта? <a class="text-primary" href="/registration">Зарегистрируйтесь</a>
         </p>
@@ -297,6 +299,15 @@
 </div>
 
 <div class="types-trigger"></div>
+<script>
+  var phone_input = document.getElementById("authPhoneModal");
+  var im = new Inputmask("99-9999999");
+  im.mask(phone_input);
+
+  Inputmask({
+    "mask": "+7 (999) 999-9999"
+  }).mask(phone_input);
+</script>
 <!-- bootstrap v5.1.3 -->
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
@@ -309,6 +320,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <script src="js/main.js"></script>
+<script src="js/ajax/auth.js"></script>
 
 <!-- metriks -->
 <!-- Yandex.Metrika counter -->

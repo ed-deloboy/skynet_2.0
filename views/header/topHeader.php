@@ -9,7 +9,7 @@
               <a class="badge bg-primary bg-opacity-25 text-primary" href="https://shop.skynet-service.com/o-magazine-ru" target="_blanc">О компании</a>
             </li>
             <li class="header__top-nav-item">
-              <a class="badge bg-primary bg-opacity-25 text-primary" href="/contc">Контакты</a>
+              <a class="badge bg-primary bg-opacity-25 text-primary" href="/contacts">Контакты</a>
             </li>
             <li class="header__top-nav-item">
               <a class="badge bg-primary bg-opacity-25 text-primary" href="/orders">Статус ремонта</a>

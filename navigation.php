@@ -14,11 +14,9 @@ if ($_SERVER['REQUEST_URI'] == '/') {
         }
     }
 }
-
+$head = 'views/header/head.php';
 $footerBody = 'views/footer/index.php';
 $loader_lending = 'view_modules/loader_lending/index.php';
-
-
 // echo 'this =' . $Page.'|';
 // $Page = trim($_SERVER['REQUEST_URI']);
 if ($Page == 'index') {
@@ -54,15 +52,21 @@ if ($Page == 'index') {
 } elseif ($Page == 'laser') {
     $contentBody = 'views/laser/index.php';
     $title = 'Скайнет - работы лазером';
-} elseif ($Page == 'contc') {
+} elseif ($Page == 'contacts') {
     $contentBody = 'views/contacts/index.php';
     $title = 'Скайнет - наши контакты';
 } elseif ($Page == 'gidrogel') {
     $contentBody = 'views/gidrogel/index.php';
     $title = 'Скайнет - гидрогелевая пленка для техники';
 } elseif ($Page == 'registration') {
-    $contentBody = 'views/reg_page/index.php';
-    $title = 'Регистрация в Скайнет';
+    if ($_SESSION) {
+        echo "<script>
+        window.location.href = '/office'
+        </script>";
+    } else {
+        $contentBody = 'views/reg_page/index.php';
+        $title = 'Регистрация в Скайнет';
+    }
 } elseif ($Page == 'contacts') {
     $contentBody = 'views/redirect/index.php';
 } elseif ($Page == 'exit') {
@@ -76,6 +80,7 @@ if ($Page == 'index') {
     if ($_SESSION) {
         $loader_lending = '';
         $footerBody = '';
+        $head = '';
         $contentBody = 'views/office/index.php';
         $title = 'Личный кабинет Скайнет';
     } else {

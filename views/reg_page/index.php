@@ -11,25 +11,28 @@ include 'views/header/header.php';
         <hr>
         <form id="regForm" class="mb-3">
             <div class="mb-3">
-                <label for="regEmail" class="form-label p-0 fs-6">*Email</label>
-                <input type="email" name="email" class="form-control" id="regEmail" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Введите действующий email</div>
-            </div>
-            <div class="mb-3">
                 <label for="regPhone" class="form-label p-0 fs-6">*Номер телефона</label>
-                <input type="number" name="phone" class="form-control" id="regPhone" aria-describedby="emailHelp">
+                <input type="tel" name="phone" class="form-control" id="regPhone" placeholder="+7 (___) ___-____" aria-describedby="regPhoneHelp">
                 <div id="emailHelp" class="form-text">По нему мы активируем скидки постоянным клиентам</div>
             </div>
             <div class="mb-3">
+                <label for="regEmail" class="form-label p-0 fs-6">*Email</label>
+                <input type="email" placeholder="example@example.ru" name="email" class="form-control" id="regEmail" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
                 <label for="regPass" class="form-label p-0 fs-6">*Пароль</label>
-                <input type="password" name="pass1" class="form-control" id="regPass">
+                <input type="password" placeholder="******" name="pass1" class="form-control" id="regPass">
             </div>
             <div class="mb-3">
                 <label for="regPass2" class="form-label p-0 fs-6">*Повторите пароль</label>
-                <input type="password" name="pass2" class="form-control" id="regPass2">
+                <input type="password" placeholder="******" name="pass2" class="form-control" id="regPass2">
             </div>
-            <button type="submit" class="btn btn-primary">Регистрация</button>
+            <button type="submit" class="btn btn-primary w-100">Регистрация</button>
         </form>
+        <div>
+            <p>Есть аккаунт? <a type="button" data-bs-toggle="modal" data-bs-target="#authModal" class="text-primary text-decoration-underline">Авторизуйтесь</a></p>
+        </div>
         <div data-error-reg class="border border-danger rounded p-3 d-none">
 
         </div>
@@ -40,7 +43,15 @@ include 'views/header/header.php';
 <?php
 include 'view_modules/acc_map/index.php';
 ?>
+<script>
+    var phone_input = document.getElementById("regPhone");
+    var im = new Inputmask("99-9999999");
+    im.mask(phone_input);
 
+    Inputmask({
+        "mask": "+7 (999) 999-9999"
+    }).mask(phone_input);
+</script>
 <script>
     var form_reg = document.querySelector('#regForm');
 

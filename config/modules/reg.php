@@ -5,10 +5,10 @@ session_start();
 require_once "../../config/db_conn/conn.php";
 require_once "../../config/function/function.php";
 
-$email = htmlspecialchars(mb_strtolower(trim($_POST['email'])));
-$phone = htmlspecialchars(mb_strtolower(trim($_POST['phone'])));
-$pass1 = htmlspecialchars(trim($_POST['pass1']));
-$pass2 = htmlspecialchars(trim($_POST['pass2']));
+$email = nl2br(htmlspecialchars(mb_strtolower(trim($_POST['email']))));
+$phone = preg_replace('/[^0-9]/', '', htmlspecialchars(mb_strtolower(trim($_POST['phone']))));
+$pass1 = nl2br(htmlspecialchars(trim($_POST['pass1'])));
+$pass2 = nl2br(htmlspecialchars(trim($_POST['pass2'])));
 
 if ($email == '' or $phone == '' or $pass1 == '' or $pass2 == '') {
     // все поля должны быть заполнены
