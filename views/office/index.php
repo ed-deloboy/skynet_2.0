@@ -30,6 +30,9 @@ document.location.href='/'
 	<link rel="stylesheet" href="./vendor/chartist/css/chartist.min.css">
 	<link href="asset_office/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="asset_office/css/style.css" rel="stylesheet">
+	<link href="../../asset_office/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="../../asset_office/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
 	<!-- icons -->
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -745,20 +748,20 @@ document.location.href='/'
 									<img src="images/profile/pic1.jpg" width="20" alt="" />
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a href="./app-profile.html" class="dropdown-item ai-icon">
+									<a data-id-page="profileEdit" type="button" class="btns_pages dropdown-item ai-icon">
 										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
 											<circle cx="12" cy="7" r="4"></circle>
 										</svg>
-										<span class="ml-2">Profile </span>
+										<span class="ml-2">Профиль</span>
 									</a>
-									<a href="./email-inbox.html" class="dropdown-item ai-icon">
+									<!-- <a href="./email-inbox.html" class="dropdown-item ai-icon">
 										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
 											<polyline points="22,6 12,13 2,6"></polyline>
 										</svg>
 										<span class="ml-2">Inbox </span>
-									</a>
+									</a> -->
 									<a href="/exit" class="dropdown-item ai-icon">
 										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -795,7 +798,7 @@ document.location.href='/'
 						<a class="ai-icon position-relative" aria-expanded="false">
 							<i class="fas fa-shopping-cart"></i>
 							<span class="nav-text">Корзина</span>
-							<span style="width: 22px; height: 22px; left: 45%; top:0;" class="position-absolute text-center bg-primary rounded-circle text-white">5</span>
+							<span class="text-center bg-info rounded text-white px-2">0</span>
 						</a>
 					</li>
 					<?php
@@ -808,6 +811,9 @@ document.location.href='/'
 							<ul aria-expanded="false">
 								<li data-sub-link data-id-page="adminStatisticPage" class="btns_pages cursor-pointer" style="cursor: pointer;"><a>Статистика</a></li>
 								<li data-sub-link data-id-page="adminPointsPage" class="btns_pages cursor-pointer" style="cursor: pointer;"><a>Точки продаж</a></li>
+								<li data-sub-link data-id-page="adminRequestRepair" class="btns_pages cursor-pointer" style="cursor: pointer;"><a>Заявки ремонт  <span class="badge badge-info"><?php
+								echo $request = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `requests` where view = 0"));
+								?></span></a></li>
 								<li data-sub-link data-id-page="adminOrdersPage" class="btns_pages cursor-pointer" style="cursor: pointer;"><a>Заказы</a></li>
 								<li data-sub-link data-id-page="adminReturnsPage" class="btns_pages cursor-pointer" style="cursor: pointer;"><a>Возвраты</a></li>
 								<li data-sub-link data-id-page="adminEditAdmin" style="cursor: pointer;"><a>Администраторы</a></li>
@@ -875,6 +881,7 @@ document.location.href='/'
 	<script src="asset_office/vendor/chart.js/Chart.bundle.min.js"></script>
 	<script src="asset_office/js/custom.min.js"></script>
 	<script src="asset_office/js/deznav-init.js"></script>
+	<script src="asset_office/vendor/datatables/js/jquery.dataTables.min.js"></script>
 
 	<!-- Counter Up -->
 	<script src="asset_office/vendor/waypoints/jquery.waypoints.min.js"></script>

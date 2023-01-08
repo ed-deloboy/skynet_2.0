@@ -22,12 +22,22 @@ window.onload = () => {
     // document.querySelector("#home").classList.add("mm-active");
     parseId = "home";
   }
-
   myMain(parseId);
 };
 
 function myMain(p2) {
   // прелоадер
+  backPage = localStorage.getItem("skynetBackPage");
+
+  if (backPage === null || backPage === [] || backPage === "") {
+    // document.querySelector("#home").classList.add("mm-active");
+    backPage = "home";
+    localStorage.setItem("skynetBackPage", backPage);
+
+  } else {
+    backPageId = localStorage.getItem("skynetBtnId");
+    localStorage.setItem("skynetBackPage", backPageId);
+  }
 
   document.querySelector("#root").innerHTML = `
     <div id="preloader">

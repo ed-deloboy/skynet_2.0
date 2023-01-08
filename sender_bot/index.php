@@ -48,6 +48,7 @@ if ($_POST) {
     $clientCity = htmlspecialchars(trim($_POST['formCitySelect']));
     $clientNumber = htmlspecialchars(trim($_POST['formClientNumber']));
 
+    $city = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from `service_centres` where id='$clientCity'"));
 
     // sendMessage($token, 771413338, 'заявка777', $kbrd_general);
     // echo 3;
@@ -58,7 +59,7 @@ if ($_POST) {
         "<b>ТИП ЗАЯВКИ:</b> " => '<b>РЕМОНТ</b>',
         "\n<b>Модель телефона:</b> " => $phoneModel,
         "\n<b>Неисправность нелефона:</b> " => $variantBreaking,
-        "\n<b>Клиент из города:</b> " => $clientCity,
+        "\n<b>Клиент из города:</b> " => $city['title'],
         "\n<b>Номер телефон:</b> " => $clientNumber,
       );
 
@@ -134,19 +135,21 @@ if ($_POST) {
       switch (mb_strtolower($message_in)) {
         case '1️⃣ заявки ростов':
           $city_id = 1;
-          $city_name = 'Ростов';
+          // $city_name = 'Ростов';
           break;
 
         case '2️⃣ заявки шахты':
           $city_id = 2;
-          $city_name = 'Шахты';
+          // $city_name = 'Шахты';
           break;
 
         case '3️⃣ заявки сулин':
           $city_id = 3;
-          $city_name = 'Сулин';
+          // $city_name = 'Сулин';
           break;
       }
+
+      $city = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from `service_centres` where id='$city_id'"));
 
       $con1 = 0;
       $con2 = 1;
@@ -154,7 +157,7 @@ if ($_POST) {
         $request_data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from `requests` where city='$city_id' order by `time_request` asc limit $con1,$con2"));
         if (!$request_data) break;
         if ($con1 == 0) {
-          jst_sendMessage($token, $chat_id, $title_mess . "<b>Последние 5 заявок по городу {$city_name}:</b>");
+          jst_sendMessage($token, $chat_id, $title_mess . "<b>Последние 5 заявок по городу {$city['title']}:</b>");
         }
         switch ($request_data['type']) {
           case '1':
@@ -176,7 +179,7 @@ if ($_POST) {
             break;
         }
         // `id`, `type`, `apparat_name`, `theme_request`, `city`, `phone`, `time_request`
-        jst_sendMessage($token, $chat_id, $title_mess . "<b>ID заявки:</b> {$request_data['id']}\n<b>Тип заявки:</b> {$type}\n<b>Заявка от: {$request_data['phone']}:</b>\n\n<b>Название аппарата: </b> {$request_data['apparat_name']}\n<b>Тема заявки: </b> {$request_data['theme_request']}\n<b>Город: </b> {$city_name} \n<b>Время создания заявки: </b> {$request_data['time_request']}\n<b>Статус прозвона: {$view}</b>");
+        jst_sendMessage($token, $chat_id, $title_mess . "<b>ID заявки:</b> {$request_data['id']}\n<b>Тип заявки:</b> {$type}\n<b>Заявка от: {$request_data['phone']}:</b>\n\n<b>Название аппарата: </b> {$request_data['apparat_name']}\n<b>Тема заявки: </b> {$request_data['theme_request']}\n<b>Город: </b> {$city['title']} \n<b>Время создания заявки: </b> {$request_data['time_request']}\n<b>Статус прозвона: {$view}</b>");
         $con1++;
         $con2++;
         sleep(1);
@@ -191,8 +194,10 @@ if ($_POST) {
           for ($i = 0; $i < 4; $i++) {
             $request_data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from `requests` where view='0' order by `time_request` asc limit $con1,$con2"));
             if (!$request_data) break;
+            $city = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from `service_centres` where id=$request_data[city]"));
+
             if ($con1 == 0) {
-              jst_sendMessage($token, $chat_id, $title_mess . "<b>Последние 5 заявок по городу {$city_name}:</b>");
+              jst_sendMessage($token, $chat_id, $title_mess . "<b>Последние 5 непросмотренных заявок:</b>");
             }
             switch ($request_data['type']) {
               case '1':
@@ -214,7 +219,7 @@ if ($_POST) {
                 break;
             }
             // `id`, `type`, `apparat_name`, `theme_request`, `city`, `phone`, `time_request`
-            jst_sendMessage($token, $chat_id, $title_mess . "<b>ID заявки:</b> {$request_data['id']}\n<b>Тип заявки:</b> {$type}\n<b>Заявка от: {$request_data['phone']}:</b>\n\n<b>Название аппарата: </b> {$request_data['apparat_name']}\n<b>Тема заявки: </b> {$request_data['theme_request']}\n<b>Город: </b> {$city_name} \n<b>Время создания заявки: </b> {$request_data['time_request']}\n<b>Статус прозвона: {$view}</b>");
+            jst_sendMessage($token, $chat_id, $title_mess . "<b>ID заявки:</b> {$request_data['id']}\n<b>Тип заявки:</b> {$type}\n<b>Заявка от: {$request_data['phone']}:</b>\n\n<b>Название аппарата: </b> {$request_data['apparat_name']}\n<b>Тема заявки: </b> {$request_data['theme_request']}\n<b>Город: </b> {$city['title']} \n<b>Время создания заявки: </b> {$request_data['time_request']}\n<b>Статус прозвона: {$view}</b>");
             $con1++;
             $con2++;
             sleep(1);

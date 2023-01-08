@@ -69,7 +69,7 @@ if ($_POST['pointEventType'] == 'edit') {
     if (!mysqli_error($conn)) {
         $ansver = [
             'status' => 200,
-            'message' => 'Изменено'
+            'message' => 'Данные успешно изменены'
         ];
         echo json_encode($ansver);
         exit;

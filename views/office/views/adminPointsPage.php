@@ -115,26 +115,34 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `users` where id='
 
 </div>
 
+<script src="../../../asset_office/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+<!-- <script src="../../../asset_office/js/plugins-init/sweetalert.init.js"></script> -->
+
 <script>
     let forms = document.querySelectorAll('[data-form-point]');
 
     forms.forEach(element => {
         element.addEventListener('submit', e => {
             e.preventDefault();
-
             let formData = $(element).serialize();
-            // console.log(formData);
-
             $.ajax({
                 type: "post",
                 url: "views/office/config/adminPointsPage.php",
                 data: formData,
                 success: function(res) {
-                    console.log('сервак');
-                    console.log(res);
 
                     let resData = JSON.parse(res);
-                    console.log(resData);
+                    // console.log(resData);
+                    switch (resData.status) {
+                        case 200:
+                            swal("Успешно", `${resData.message}`, "success");
+                            break;
+
+                        case 500:
+                            sweetAlert("Ошибка", `${resData.message}`, "error")
+                            break;
+
+                    }
 
                 }
             });
